@@ -56,22 +56,26 @@ def homepage():
     """List all available api routes."""
     return (
         f"Welcome to Hawaii - Climate Page<br/>"
+        f"<br/>"
+        f"This site has data from 01-01-2010 to 08-23-2017<br/>"
+        f"<br/>"
         f"Available Pages:<br/>"
         f"<br/>"
-        f"Station Information<br/>"
-        f"/api/v1.0/stations<br/>"
         f"<br/>"
-        f"Percipitation Information<br/>"
-        f"/api/v1.0/percipitation<br/>"
+        f"  Station Information<br/>"
+        f"    /api/v1.0/stations<br/>"
         f"<br/>"
-        f"Temperature Observations<br/>"
-        f"/api/v1.0/tobs<br/>"
+        f"  Percipitation Information<br/>"
+        f"    /api/v1.0/percipitation<br/>"
         f"<br/>"
-        f"Start Date information - please add '/yyyy-mm-dd' to the url<br/>"
-        f"/api/v1.0/start<br/>"
+        f"  Temperature Observations<br/>"
+        f"    /api/v1.0/tobs<br/>"
         f"<br/>"
-        f"Start and End Date information - please add '/yyyy-mm-dd/yyyy-mm-dd' to the url<br/>"
-        f"/api/v1.0/start/end"
+        f"  Start Date information - complete url is '/api/v1.0//yyyy-mm-dd'<br/>"
+        f"    /api/v1.0/start<br/>"
+        f"<br/>"
+        f"  Start and End Date information - complete url is  '/api/v1.0/yyyy-mm-dd/yyyy-mm-dd'<br/>"
+        f"    /api/v1.0/start/end"
     )
 
 
@@ -169,7 +173,6 @@ def start_only(start):
         start_list_dict["TAVG"] = result[2]
         start_list.append(start_list_dict)
     
-
     return jsonify(start_list)
 
 
